@@ -28,9 +28,31 @@ Good Response:
 
 ```js
 {
-  error: false
+  error: false,
 }
 ```
+
+**GET /pdf/list**
+
+Get a list of all available pdfs.
+
+Good Response:
+
+```js
+{
+  error: false,
+  pdfList: [
+    {
+      name: "my-docker-workshop",
+      link: "pdf/download/my-docker-workshop.pdf",
+    }
+  ]
+}
+```
+
+**GET /pdf/download/:filename**
+
+Download a pdf file.
 
 **GET /scrape?url**
 

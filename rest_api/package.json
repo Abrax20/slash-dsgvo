@@ -1,0 +1,20 @@
+{
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "watch": "nodemon app.js --ignore --trace-sync-io"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "morgan": "^1.9.1",
+    "mz": "^2.7.0"
+  },
+  "devDependencies": {}
+}

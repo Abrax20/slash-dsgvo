@@ -2,9 +2,27 @@
 
 ## routes
 
+Bad Response:
+
+```js
+{
+  error: true,
+  message: "<error message>"
+}
+```
+
 **POST /pdf**
 
 Submit a pdf.
+
+Reqest Parameters:
+
+```js
+{
+  pdf: "<base64 encoded pdf data>",
+  client: "<name of the client>",
+}
+```
 
 Good Response:
 

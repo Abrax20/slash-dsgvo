@@ -1,7 +1,7 @@
 const fs = require( "mz/fs" );
 const path = require( "path" );
 
-const directory = path.resolve( __dirname, "..", "data" );
+const directory = path.resolve( __dirname, "..", "..", "data", "pdf" );
 
 async function savePdf( name, buff ) {
   const filePath = path.resolve( directory, `${name}.pdf` );

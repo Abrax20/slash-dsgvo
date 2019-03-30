@@ -1,6 +1,6 @@
 const express = require( "express" );
 const router = express.Router();
-const savePdf = require( "../util/save-pdf" );
+const savePdf = require( "./save-pdf" );
 
 router.post( "/", ( req, res ) => {
   savePdf( "pdf-test", req.body.pdf );

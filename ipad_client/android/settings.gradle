@@ -1,0 +1,3 @@
+rootProject.name = 'ipad_client'
+
+include ':app'

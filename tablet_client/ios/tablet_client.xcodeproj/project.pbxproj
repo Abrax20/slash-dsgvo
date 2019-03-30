@@ -25,7 +25,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		3D84A35087B14E49BBC94174 /* libRNiBeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DED6832ADB4C4EF2B6BF0CB1 /* libRNiBeacon.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		90D6E9AD224F9551005622AB /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D6E9AC224F9551005622AB /* Test.swift */; };
+		90D6E9AD224F9551005622AB /* RNIBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D6E9AC224F9551005622AB /* RNIBeacon.swift */; };
 		90E3562CEED64B21A34AB2E8 /* libBleClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B4E14A4DA54DD8A146E479 /* libBleClient.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
@@ -339,7 +339,7 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		90D6E9AB224F9550005622AB /* tablet_client-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tablet_client-Bridging-Header.h"; sourceTree = "<group>"; };
-		90D6E9AC224F9551005622AB /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		90D6E9AC224F9551005622AB /* RNIBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNIBeacon.swift; sourceTree = "<group>"; };
 		94CD7887A1FC4EEBB9DEB9B3 /* BleClient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BleClient.xcodeproj; path = "../node_modules/react-native-ble-plx/ios/BleClient.xcodeproj"; sourceTree = "<group>"; };
 		A8B4E14A4DA54DD8A146E479 /* libBleClient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBleClient.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -465,6 +465,8 @@
 		13B07FAE1A68108700A75B9A /* tablet_client */ = {
 			isa = PBXGroup;
 			children = (
+				90D6E9AB224F9550005622AB /* tablet_client-Bridging-Header.h */,
+				90D6E9AC224F9551005622AB /* RNIBeacon.swift */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -560,14 +562,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				90D6E9AC224F9551005622AB /* Test.swift */,
 				13B07FAE1A68108700A75B9A /* tablet_client */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* tablet_clientTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				90D6E948224F9094005622AB /* Recovered References */,
-				90D6E9AB224F9550005622AB /* tablet_client-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -1086,7 +1086,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				90D6E9AD224F9551005622AB /* Test.swift in Sources */,
+				90D6E9AD224F9551005622AB /* RNIBeacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

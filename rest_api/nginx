@@ -1,0 +1,18 @@
+worker_processes 2;
+
+events {
+  work_connections 1000;
+}
+
+http {
+  upstream rest_app {
+    server rest:8000
+  }
+  server {
+    listen 80;
+
+    location ~ / {
+      proxy_pass http://rest_app;
+    }
+  }
+}

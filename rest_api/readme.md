@@ -13,14 +13,31 @@ Bad Response:
 
 **POST /pdf**
 
-Submit a pdf.
+Submit data to create a pdf.
 
-Reqest Parameters:
+Request Parameters:
 
 ```js
 {
-  pdf: "<base64 encoded pdf data>",
-  client: "<name of the client>",
+  company: {
+    name: "string<company thats operating the tablet>",
+  },
+  client: {
+    name: "string<full name>",
+    signature: "base64<signature of the client>",
+    lang: "string<language of the contract>",
+  },
+  convention: {
+    name: "string<name of the convention>",
+    place: "string<place of the convention>",
+    time: "iso-date<time of contract>",
+  },
+  dpo: {
+    name: "string<name of the data protection officer>",
+    email: "string<email of the dpo>",
+    tel: "string<tel of dpo>",
+    addr: "string<address of dpo>",
+  }
 }
 ```
 

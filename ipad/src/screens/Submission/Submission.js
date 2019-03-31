@@ -8,6 +8,7 @@ import {
 import Signature from "../../components/Signature/Signature";
 import PrimaryButton from "../../components/Buttons/PrimaryButton";
 import SecondaryButton from "../../components/Buttons/SecondaryButton";
+import Header from "../../components/Header/Header";
 
 export const Submission = ({
   date='12.02.10',
@@ -20,6 +21,7 @@ export const Submission = ({
   address='Unter den Linden 1'
 }) => (
 <Container>
+  <Header />
   <Content>
     <Text>
       According to § 35 BDSG you can at any time demand the correction,{'\n'}

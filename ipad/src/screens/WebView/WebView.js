@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React, {Component, Fragment} from "react";
 import { WebView } from "react-native";
-//import WKWebView from 'react-native-wkwebview-reborn';
+import { setupSocket } from "./socket";
 
-// ...
-class MyWebComponent extends Component {
+export default class RNWebView extends Component {
+  constructor(props) {
+    super(props);
+    setupSocket(props.navigation);
+  }
+
   render() {
     return (
       <WebView
@@ -12,4 +16,3 @@ class MyWebComponent extends Component {
     );
   }
 }
-export default MyWebComponent;

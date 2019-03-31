@@ -10,19 +10,19 @@ import Foundation
 
 @objc(RNCommunicationService)
 class RNCommunicationService : RCTEventEmitter, CommunicationServiceDelegate {
-  let communicationService = CommunicationService();
+  //let communicationService = CommunicationService();
   
   func connectedDevicesChanged(manager: CommunicationService, connectedDevices: [String]) {
     print("Device Connect");
   }
   
   func onMessage(manager: CommunicationService, message: String) {
-    sendEvent(withName: "onMessage", body: ["message": message])
+    //sendEvent(withName: "onMessage", body: ["message": message])
   }
   
   @objc
   func sendMessage() {
-    communicationService.send(message: "Test Message");
+    //communicationService.send(message: "Test Message");
   }
 
   @objc

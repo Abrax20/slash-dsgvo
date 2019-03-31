@@ -54,7 +54,7 @@ async function generatePdf( data ) {
         `Meine angegeben Daten, darunter zählen E-Mail-Adresse, Telefon- Handynummer, Unternehmensname, Berufsbezeichnung, Adresse erfasst und gespeichert werden dürfen.`,
         `Ich meine Rechte gegenüber der ${company.name} wahrgenommen und verstanden habe.`,
       ] },
-      { image: `data:image/png;base64,${client.signature}` },
+      { image: client.signature },
       `${client.name}, ${convention.place}`,
     ]
   }

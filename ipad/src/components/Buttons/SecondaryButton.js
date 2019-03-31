@@ -9,17 +9,17 @@ import {
 export const Container = styled.View`
   padding: 16px 32px;
   border-radius: 4px;
+  align-self: center;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.primary};
   align-self: ${({ alignSelf }) => (alignSelf || 'center')};
 `;
 export const Title = styled.Text`
   line-height: 27px;
   text-align: center;
   font-size: 22.656px;
-  color: ${colors.white};
+  color: ${colors.grey};
 `;
 
-export const PrimaryButton = ({ alignSelf, children }) => <Container alignSelf={alignSelf} ><Title> { children } </Title></Container>;
-export default PrimaryButton;
+export const SecondaryButton = ({ alignSelf, children }) => <Container alignSelf={alignSelf}><Title> { children } </Title></Container>;
+export default SecondaryButton;

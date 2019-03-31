@@ -5,11 +5,13 @@ import {
 } from './styled';
 import WebView from "../screens/WebView/WebView";
 import Header from "../components/Header/Header";
+import Submission from "../screens/Submission/Submission";
 
 export const App = () => (
   <Container>
     <Header />
-    <WebView/>
+    <Submission/>
   </Container>
 );
 export default App;
+//<WebView/>

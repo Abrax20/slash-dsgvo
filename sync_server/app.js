@@ -3,6 +3,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 io.on('connection', function(socket){
+  console.log("Device connect");
   socket.on('OPEN_SIGNATURE_SCREEN', (data) =>
     io.emit('OPEN_SIGNATURE_SCREEN', data));
 });

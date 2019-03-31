@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components/native';
+import { TouchableWithoutFeedback } from "react-native";
 
 import {
   colors
@@ -9,10 +10,10 @@ import {
 export const Container = styled.View`
   padding: 16px 32px;
   border-radius: 4px;
+  align-self: center;
   align-items: center;
   justify-content: center;
   background-color: ${colors.primary};
-  align-self: ${({ alignSelf }) => (alignSelf || 'center')};
 `;
 export const Title = styled.Text`
   line-height: 27px;
@@ -21,5 +22,13 @@ export const Title = styled.Text`
   color: ${colors.white};
 `;
 
-export const PrimaryButton = ({ alignSelf, children }) => <Container alignSelf={alignSelf} ><Title> { children } </Title></Container>;
+export const PrimaryButton = ({ children, onPress }) => (
+  <TouchableWithoutFeedback onPress={onPress}>
+    <Container>
+      <Title>
+        { children }
+      </Title>
+    </Container>
+  </TouchableWithoutFeedback>
+);
 export default PrimaryButton;

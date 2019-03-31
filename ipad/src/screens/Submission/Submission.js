@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import {
   Text,
@@ -10,8 +10,46 @@ import PrimaryButton from "../../components/Buttons/PrimaryButton";
 import SecondaryButton from "../../components/Buttons/SecondaryButton";
 import Header from "../../components/Header/Header";
 
+export const sendToREST = () => {
+  fetch('http://72a3f2d3.ngrok.io/pdf', {
+    method: 'POST',
+    body: JSON.stringify({
+    company: {
+      name: "Welcome",
+    },
+    client: {
+      name: "string<full name>",
+      signature: "base64<signature of the client>",
+      lang: "string<language of the contract>",
+    },
+    convention: {
+      name: "string<name of the convention>",
+      place: "string<place of the convention>",
+      time: "iso-date<time of contract>",
+    },
+    dpo: {
+      name: "string<name of the data protection officer>",
+      email: "string<email of the dpo>",
+      tel: "string<tel of dpo>",
+      addr: "string<address of dpo>",
+    }
+    }),
+  })
+};
+
 export default class Submission extends Component {
   render() {
+    const {
+      date,
+      name,
+      email,
+      phone,
+      address,
+      location,
+      companyName,
+      dataProtectionOfficer,
+    } = this.props;
+
     return (
       <Container>
         <Header />
@@ -38,13 +76,13 @@ export default class Submission extends Component {
           </Content>
           <Signature onChange={signature => this.setState({ signature })} />
           <Text>{ name } { location } { date }</Text>
-          <PrimaryButton alignSelf={'flex-start'}>Submit</PrimaryButton>
+          <PrimaryButton onPress={() => sendToREST()} alignSelf={'flex-start'}>Submit</PrimaryButton>
           <SecondaryButton alignSelf={'flex-start'}>Reset</SecondaryButton>
       </Container>
     );
   }
 }
-Submission.defaultProps = {
+/*Submission.defaultProps = {
   date: '12.02.10',
   location: 'Berlin',
   phone: "+1111111111",
@@ -54,4 +92,4 @@ Submission.defaultProps = {
   dataProtectionOfficer: 'Tom',
   address: 'Unter den Linden 1'
 };
-export default Submission;
+*/

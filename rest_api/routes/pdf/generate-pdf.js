@@ -36,7 +36,7 @@ async function generatePdf( data ) {
         `I have acknowledged and understood my rights regarding the ${company.name} and the data wich is stored about me.`,
       ] },
       { image: `data:image/png;base64,${client.signature}` },
-      `${client.name}, ${convention.place}, ${convention.time}`,
+      `${client.name}, ${convention.place}`,
     ],
     de: [
       { text: `Schriftliche Einwilligung zur Erhebung Personenbezogener Daten auf der ${convention.name} durch das Unternehmen ${company.name}`, style: [ "title", "doubleMargin" ] },
@@ -55,7 +55,7 @@ async function generatePdf( data ) {
         `Ich meine Rechte gegenüber der ${company.name} wahrgenommen und verstanden habe.`,
       ] },
       { image: `data:image/png;base64,${client.signature}` },
-      `${client.name}, ${convention.time}, ${convention.place}`,
+      `${client.name}, ${convention.place}`,
     ]
   }
   const text = texts[client.lang];

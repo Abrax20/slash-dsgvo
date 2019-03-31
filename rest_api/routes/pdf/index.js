@@ -31,9 +31,9 @@ router.post( "/", async ( req, res ) => {
   if ( !convention.place ) {
     return res.json( { error: true, message: "Missing convention.place" } );
   }
-  if ( !convention.time ) {
+  /*if ( !convention.time ) {
     return res.json( { error: true, message: "Missing convention.time" } );
-  }
+  }*/
 
   const dpo = req.body.dpo || {};
   if ( !dpo.name ) {

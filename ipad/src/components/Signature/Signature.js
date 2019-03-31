@@ -21,6 +21,7 @@ export default class Demo extends Component {
   };
 
   _signaturePadChange = ({base64DataUrl}) => {
+    this.props.onChange(base64DataUrl);
     console.log("Got new signature: " + base64DataUrl);
   };
 }

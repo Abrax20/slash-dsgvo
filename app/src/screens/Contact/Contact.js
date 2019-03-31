@@ -8,7 +8,7 @@ import ContactInformationForm from "../../components/forms/ContactInformationFor
 export const ContactInformation = ({ navigation }) => (
   <Container>
     <Header title={'GDPR Complaince Checker'} />
-    <ContactInformationForm onSubmit={(data) => saveContact({ ...(navigation.getParams()), ...data })} />
+    <ContactInformationForm onSubmit={(data) => saveContact({ ...navigation.state.params, ...data })} />
     <Footer />
   </Container>
 

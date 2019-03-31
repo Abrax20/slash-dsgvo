@@ -4,8 +4,8 @@ import {
   Container
 } from './styled';
 
-import Line from "../components/Line/Line";
-import Headline from "../components/Headline/Headline";
+import Line from "../Line/Line";
+import Headline from "../Headline/Headline";
 
 export const Header = ({
   title='GDPR Complaince Checker',

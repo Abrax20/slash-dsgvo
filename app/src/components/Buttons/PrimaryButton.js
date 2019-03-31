@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components/native';
+import { TouchableWithoutFeedback } from "react-native";
 
 import {
   colors
@@ -21,5 +22,13 @@ export const Title = styled.Text`
   color: ${colors.white};
 `;
 
-export const PrimaryButton = ({ children }) => <Container><Title> { children } </Title></Container>;
+export const PrimaryButton = ({ children, onPress }) => (
+  <TouchableWithoutFeedback onPress={onPress}>
+    <Container>
+      <Title>
+        { children }
+      </Title>
+    </Container>
+  </TouchableWithoutFeedback>
+);
 export default PrimaryButton;

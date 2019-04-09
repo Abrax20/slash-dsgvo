@@ -4,17 +4,14 @@ const fs = require( "mz/fs" );
 
 const directory = path.resolve( __dirname, "..", "..", "data", "pdf" );
 
-async function generatePdf( data ) {
-  const company = data.company;
-  const client = data.client;
-  const convention = data.convention;
-  const dpo = data.dpo;
+function generatePdf( data ) {
+  const { company, client, convention, dpo } = data;
 
   const fonts = {
     Roboto: {
-      normal: path.resolve( __dirname, './fonts/Roboto-Regular.ttf' ),
-      bold: path.resolve( __dirname, './fonts/Roboto-Medium.ttf' ),
-    }
+      normal: path.resolve( __dirname, "./fonts/Roboto-Regular.ttf" ),
+      bold  : path.resolve( __dirname, "./fonts/Roboto-Medium.ttf" ),
+    },
   };
   const printer = new PdfPrinter( fonts );
 
@@ -35,7 +32,7 @@ async function generatePdf( data ) {
         `My given data, including e-mail address, telephone number, mobile phone number, company name, job title, address can be collected and stored.`,
         `I have acknowledged and understood my rights regarding the ${company.name} and the data wich is stored about me.`,
       ] },
-      { image: `data:image/png;base64,${client.signature}` },
+      { image: client.signature, fit: [ 130, 600 ] },
       `${client.name}, ${convention.place}`,
     ],
     de: [
@@ -54,34 +51,34 @@ async function generatePdf( data ) {
         `Meine angegeben Daten, darunter zählen E-Mail-Adresse, Telefon- Handynummer, Unternehmensname, Berufsbezeichnung, Adresse erfasst und gespeichert werden dürfen.`,
         `Ich meine Rechte gegenüber der ${company.name} wahrgenommen und verstanden habe.`,
       ] },
-      { image: client.signature },
+      { image: client.signature, fit: [ 130, 600 ] },
       `${client.name}, ${convention.place}`,
-    ]
-  }
+    ],
+  };
   const text = texts[client.lang];
 
   const documentDefinition = {
     content: text,
-    styles: {
+    styles : {
       title: {
-        bold: true,
+        bold    : true,
         fontSize: 16,
       },
       botMargin: {
-        margin: [0,0,0,10],
+        margin: [ 0, 0, 0, 10 ],
       },
       doubleMargin: {
-        margin: [0,0,0,20],
+        margin: [ 0, 0, 0, 20 ],
       },
       bold: {
         bold: true,
-      }
+      },
     },
     defaultStyle: {
       fontSize: 14,
-      margin: [0,0,0,10],
-    }
-  }
+      margin  : [ 0, 0, 0, 10 ],
+    },
+  };
   const pdfDoc = printer.createPdfKitDocument( documentDefinition );
 
   const filePath = path.resolve( directory, `${client.name}.pdf` );

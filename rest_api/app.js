@@ -11,13 +11,12 @@ const app = express();
 app.use( helmet( { referrerPolicy: true } ) );
 
 // Parse req.body
-app.use( bodyParser.json( { limit: "7mb" }) );
+app.use( bodyParser.json( { limit: "7mb" } ) );
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
 // Dev logging
-if ( secrets.ENVIRONMENT === "development" ) {
+if ( secrets.ENVIRONMENT === "development" )
   app.use( httpLogger.dev );
-}
 
 // Use routes
 initiateRoutes( app );
